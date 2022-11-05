@@ -23,9 +23,9 @@ const Button = ({ icon, onPick }) => {
         onPick(icon);
       }}
     >
-      <div className="icon bg-white rounded-circle d-flex align-items-center justify-content-center">
+      <span className="icon d-block bg-white rounded-circle d-flex align-items-center justify-content-center">
         <img src={icons[icon]} alt={`${icon} icon`} />
-      </div>
+      </span>
     </button>
   );
 };
