@@ -1,4 +1,4 @@
-const Result = ({ status, winner, onReset }) => {
+const Result = ({ status, winner, onReplay }) => {
   return (
     <div className={`result-holder ${status ? "show" : ""}`}>
       <h1 className="result text-uppercase text-white mb-4">
@@ -10,8 +10,8 @@ const Result = ({ status, winner, onReset }) => {
       </h1>
       <button
         type="btn"
-        className="btn d-block mx-auto bg-white dark-text letter-gap text-uppercase fs-5 py-2 px-5 px-md-0"
-        onClick={onReset}
+        className="btn d-block mx-auto bg-white dark-text letter-gap text-uppercase main-fs py-2 px-5 px-md-0"
+        onClick={onReplay}
       >
         play again
       </button>

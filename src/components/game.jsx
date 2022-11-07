@@ -1,16 +1,19 @@
-import bg from "../images/bg-pentagon.svg";
-import Button from "./button";
+import NormalMode from "./normalMode";
+import BonusMode from "./bonusMode";
 
-const Game = ({ onPick }) => {
+const Game = ({ onPick, mode }) => {
   return (
     <div className="game-container pt-5 mt-5">
-      <div className="fit mt-4 position-relative mx-auto">
-        <img src={bg} alt="" className="mx-auto game-bg" />
-        <Button icon="scissors" onPick={onPick} />
-        <Button icon="paper" onPick={onPick} />
-        <Button icon="rock" onPick={onPick} />
-        <Button icon="lizard" onPick={onPick} />
-        <Button icon="spock" onPick={onPick} />
+      <div
+        className={`fit mt-4 position-relative mx-auto ${
+          mode === "normal" ? "normal" : "bonus"
+        }`}
+      >
+        {mode === "normal" ? (
+          <NormalMode onPick={onPick} />
+        ) : (
+          <BonusMode onPick={onPick} />
+        )}
       </div>
     </div>
   );

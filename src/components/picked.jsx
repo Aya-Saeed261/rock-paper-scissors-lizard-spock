@@ -8,7 +8,11 @@ import paper from "../images/icon-paper.svg";
 import spock from "../images/icon-spock.svg";
 import rock from "../images/icon-rock.svg";
 
-const icons = { scissors, lizard, paper, spock, rock };
+const allIcons = {
+  normal: { scissors, paper, rock },
+  bonus: { scissors, lizard, paper, spock, rock },
+};
+
 const rules = {
   scissors: {
     beats: ["paper", "lizard"],
@@ -27,36 +31,29 @@ const rules = {
   },
 };
 
-const Picked = ({ icon, onReset, onScore }) => {
+const Picked = ({ icon, mode, onReplay, onScore }) => {
   const [computerChoice, setComputerChoice] = useState("");
   const [showResult, setShowResult] = useState(false);
   const [winner, setWinner] = useState("");
 
   const handleComputerChoice = () => {
-    const choices = Object.keys(icons);
-
-    const randomNum = Math.floor(Math.random() * 5);
+    const choices = Object.keys(allIcons[mode]);
+    const randomNum = Math.floor(Math.random() * choices.length);
     const comChoice = choices[randomNum];
-
     let i = 0;
     let loops = 1;
     const choicesAnimation = setInterval(() => {
       setComputerChoice(choices[i]);
-
       if (loops === 3 && comChoice === choices[i]) {
         clearInterval(choicesAnimation);
-
         setTimeout(() => {
           setShowResult(true);
         }, 500);
-
         setTimeout(() => {
           handleResult(icon, comChoice);
         }, 700);
-
         return;
       }
-
       i++;
       if (i === choices.length) {
         i = 0;
@@ -67,11 +64,11 @@ const Picked = ({ icon, onReset, onScore }) => {
 
   useEffect(handleComputerChoice, []);
 
-  const handleReset = () => {
+  const handleReplay = () => {
     setComputerChoice("");
     setShowResult(false);
     setWinner("");
-    onReset();
+    onReplay();
   };
 
   const handleResult = (user, computer) => {
@@ -100,11 +97,11 @@ const Picked = ({ icon, onReset, onScore }) => {
           } d-flex align-items-center justify-content-center rounded-circle`}
         >
           <div className="icon bg-white rounded-circle d-flex align-items-center justify-content-center">
-            <img src={icons[icon]} alt={icon} />
+            <img src={allIcons[mode][icon]} alt={icon} />
           </div>
         </div>
       </div>
-      <Result status={showResult} winner={winner} onReset={handleReset} />
+      <Result status={showResult} winner={winner} onReplay={handleReplay} />
       <div className="d-flex flex-column-reverse flex-md-column">
         <h2 className="text-uppercase text-white text-center letter-gap mb-md-5 mt-4 mt-md-0">
           The house picked
@@ -121,7 +118,7 @@ const Picked = ({ icon, onReset, onScore }) => {
               computerChoice.length > 0 ? "bg-white" : ""
             } rounded-circle d-flex align-items-center justify-content-center`}
           >
-            <img src={icons[computerChoice]} alt={computerChoice} />
+            <img src={allIcons[mode][computerChoice]} alt={computerChoice} />
           </div>
         </div>
       </div>

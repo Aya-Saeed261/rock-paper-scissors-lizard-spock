@@ -27,6 +27,10 @@ body {
   color: var(--dark-text);
 }
 
+.blue-text {
+  color: var(--score-text);
+}
+
 .letter-gap {
   letter-spacing: 0.2rem;
 }
@@ -34,6 +38,18 @@ body {
 @media (max-width: 767px) {
   .letter-gap {
     letter-spacing: 0.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-fs {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-fs {
+    font-size: 0.75rem;
   }
 }
 
@@ -125,22 +141,6 @@ body {
   }
 }
 
-.score-title {
-  color: var(--score-text);
-}
-
-@media (min-width: 1024px) {
-  .score-title {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .score-title {
-    font-size: 0.75rem;
-  }
-}
-
 @media (min-width: 768px) {
   .score {
     font-size: 5rem;
@@ -190,19 +190,37 @@ body {
   }
 }
 
-.game-btn.scissors {
+.normal .game-btn.scissors {
+  top: 0;
+  left: 0;
+  transform: translate(-40%, -40%);
+}
+
+.normal .game-btn.paper {
+  top: 0;
+  right: 0;
+  transform: translate(40%, -40%);
+}
+
+.normal .game-btn.rock {
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 40%);
+}
+
+.bonus .game-btn.scissors {
   top: 0;
   left: 50%;
   transform: translate(-50%, -40%);
 }
 
-.game-btn.paper {
+.bonus .game-btn.paper {
   top: 50%;
   left: 100%;
   transform: translate(-53%, -68%);
 }
 
-.game-btn.rock {
+.bonus .game-btn.rock {
   bottom: 0;
   right: 0;
   transform: translateY(50%);
@@ -274,7 +292,7 @@ body {
 
 @media (max-width: 767px) {
   .picked-holder {
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 5rem;
   }
@@ -303,13 +321,13 @@ body {
 
 @media (max-width: 767px) {
   .picked-btn {
-    width: 9rem;
-    height: 9rem;
+    width: 8rem;
+    height: 8rem;
     border-bottom-width: 0.5rem;
   }
 
   .picked-holder h2 {
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -334,8 +352,8 @@ body {
 
 @media (max-width: 767px) {
   .picked-btn .icon {
-    width: 6.8rem;
-    height: 6.8rem;
+    width: 5.8rem;
+    height: 5.8rem;
   }
 }
 
@@ -373,11 +391,11 @@ body {
 
 @media (max-width: 767px) {
   .picked-btn:not(.lizard) .icon img {
-    width: 3rem;
+    width: 2.5rem;
   }
 
   .picked-btn.lizard .icon img {
-    width: 3.5rem;
+    width: 3rem;
   }
 }
 
@@ -446,6 +464,12 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .result {
+    font-size: 2.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .result-holder button {
     width: 100%;
@@ -453,31 +477,39 @@ body {
 }
 /* End result */
 
-/* Start Rules */
-.rules-btn {
-  position: absolute;
+/* Start Settings */
+.dropdown-menu .dropdown-item.active {
+  background-color: #526ef5;
+}
+
+.mode-btn {
+  border-width: 2px;
 }
 
 @media (min-width: 768px) {
-  .rules-btn {
+  .settings-holder {
+    right: 3rem;
+    left: 3rem;
+    bottom: 3rem;
+  }
+
+  .rules-btn,
+  .mode-btn {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    right: 3rem;
-    bottom: 3rem;
-    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 767px) {
-  .rules-btn {
-    padding: 0.35rem 2rem;
+  .settings-holder {
+    right: 1.5rem;
+    left: 1.5rem;
     bottom: 2rem;
-    margin-top: 6rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+  }
+
+  .rules-btn,
+  .mode-btn {
+    padding: 0.35rem 2rem;
   }
 }
 
@@ -503,6 +535,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     padding-top: 5rem;
     padding-bottom: 4rem;
@@ -513,4 +546,5 @@ body {
     margin-bottom: 0 !important;
   }
 }
-/* End Rules */
+
+/* End Settings */
