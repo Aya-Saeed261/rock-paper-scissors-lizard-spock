@@ -15,7 +15,7 @@ const App = () => {
   const [mode, setMode] = useState("normal");
 
   useEffect(() => {
-    const score = JSON.parse(window.localStorage.getItem("game-score")) || {
+    const score = JSON.parse(window.localStorage.getItem("gameScore")) || {
       normal: 0,
       bonus: 0,
     };
@@ -45,7 +45,7 @@ const App = () => {
 
   const updateScore = (newScore) => {
     setScore(newScore);
-    window.localStorage.setItem("game-score", JSON.stringify(newScore));
+    window.localStorage.setItem("gameScore", JSON.stringify(newScore));
   };
 
   return (
