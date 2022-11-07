@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/rock-paper-scissors-lizard-spock/static/css/main.79fec80d.css",
-    "main.js": "/rock-paper-scissors-lizard-spock/static/js/main.3adfbbbe.js",
+    "main.css": "/rock-paper-scissors-lizard-spock/static/css/main.1cc9d057.css",
+    "main.js": "/rock-paper-scissors-lizard-spock/static/js/main.7b22c935.js",
     "static/media/logo-bonus.svg": "/rock-paper-scissors-lizard-spock/static/media/logo-bonus.9bf8aeb80c2526dee7c67aa5c1b74ccc.svg",
     "static/media/image-rules-bonus.svg": "/rock-paper-scissors-lizard-spock/static/media/image-rules-bonus.513320fbf32ba9e4a81fba903a77b85f.svg",
+    "static/media/logo.svg": "/rock-paper-scissors-lizard-spock/static/media/logo.a4a2b39fefcdb6a1a8088c4dba8f3d93.svg",
     "static/media/icon-lizard.svg": "/rock-paper-scissors-lizard-spock/static/media/icon-lizard.0f83914cca1adc9454d1bdceb17610b0.svg",
     "static/media/icon-paper.svg": "/rock-paper-scissors-lizard-spock/static/media/icon-paper.8b57a6b108c1b8ae82931a39b10f96a2.svg",
     "index.html": "/rock-paper-scissors-lizard-spock/index.html",
@@ -12,11 +13,12 @@
     "static/media/icon-rock.svg": "/rock-paper-scissors-lizard-spock/static/media/icon-rock.476e90a9646a87bb3645d2f09f4f7fba.svg",
     "static/media/icon-close.svg": "/rock-paper-scissors-lizard-spock/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
     "static/media/bg-pentagon.svg": "/rock-paper-scissors-lizard-spock/static/media/bg-pentagon.1ad6d36532b75eb7d82cabe6e8d92aef.svg",
-    "main.79fec80d.css.map": "/rock-paper-scissors-lizard-spock/static/css/main.79fec80d.css.map",
-    "main.3adfbbbe.js.map": "/rock-paper-scissors-lizard-spock/static/js/main.3adfbbbe.js.map"
+    "static/media/bg-triangle.svg": "/rock-paper-scissors-lizard-spock/static/media/bg-triangle.77c6ca418d3751d8f71789234314a8b9.svg",
+    "main.1cc9d057.css.map": "/rock-paper-scissors-lizard-spock/static/css/main.1cc9d057.css.map",
+    "main.7b22c935.js.map": "/rock-paper-scissors-lizard-spock/static/js/main.7b22c935.js.map"
   },
   "entrypoints": [
-    "static/css/main.79fec80d.css",
-    "static/js/main.3adfbbbe.js"
+    "static/css/main.1cc9d057.css",
+    "static/js/main.7b22c935.js"
   ]
 }
